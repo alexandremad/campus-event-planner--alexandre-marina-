@@ -30,3 +30,29 @@ def displayMenu():
     print("4. Marcar Evento como Participado")
     print("5. Gerar Relatório")
     print("6. Sair")
+
+
+def main():
+    while True:
+        displayMenu()
+        opcao = input("Escolha uma opção: ")
+
+        if opcao == "1":
+            AdicionarEvento()
+        elif opcao == "2":
+            VerTodosEvento ()
+        elif opcao == "3":
+            FiltrarporEventos (listaEventos, categiria)
+        elif opcao == "4":
+            MarcarEventoAtendido(listaEventos, id)
+        elif opcao == "5":
+            GerarRelatorio(listaEventos)
+        elif opcao == "6":
+            print("Até logo!")
+            break
+        else:
+            print("Opção inválida. Tente novamente.")
+
+
+if __name__ == "__main__":
+    main()
