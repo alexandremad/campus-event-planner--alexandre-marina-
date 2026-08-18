@@ -20,4 +20,3 @@ def adicionarEvento(listaEventos, nome, data, local, categoria, cidade):
     }
 
     listaEventos.append(novoEvento)
-
