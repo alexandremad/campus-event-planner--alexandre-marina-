@@ -23,7 +23,7 @@ def adicionarEvento(listaEventos, nome, data, local, categoria, cidade):
 
 
 def listar_eventos(listaDeEvento):
-    """Lista os eventos cadatrados."""
+    """Lista os eventos cadatrados. """
     print("\n--- Lista de Eventos ---")
     for novoEvento in listaDeEvento:
         if novoEvento[2] > 0:                   
