@@ -10,8 +10,6 @@ eventoBase = {
 
 listaDeEventos = []
 
-listaDeEventos = []
-
 def adicionarEvento(listaEventos):
     print("\n--- Novo Evento ---")
     nome = input("Nome do evento: ")
