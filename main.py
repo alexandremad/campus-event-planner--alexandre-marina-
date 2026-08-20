@@ -47,11 +47,11 @@ def filtrar_eventos(listaDeEvento):
     for novoEvento in listaDeEvento:
        
         if nome_busca.lower() in novoEvento[0].lower():
-            print(f"Nome: {novoEvento[0]} | data: R$ {novoEvento[1]} | local: {novoEvento[3]} | categoria: {novoEvento[4]} | cidade: {novoEvento[5]}")
+            print(f"Nome: {novoEvento[0]} | data: R$ {novoEvento[1]} | local: {novoEvento[2]} | categoria: {novoEvento[3]} | cidade: {novoEvento[4]}")
             encontrou = True
             
     if not encontrou:
-        print("Nenhum produto encontrado com esse termo.")    
+        print("Nenhum produto encontrado com esse termo.")     
 
 
 
