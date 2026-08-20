@@ -1,3 +1,5 @@
+import re
+
 eventoBase = {
     "data": "10/09/2026",
     "local": "Mané Garrincha",
@@ -10,10 +12,19 @@ eventoBase = {
 
 listaDeEventos = []
 
+import re
+
+def validar_data(data):
+    padrao = r"^(0[1-9]|[12]\d|3[01])/(0[1-9]|1[0-2])/\d{4}$"
+    return bool(re.match(padrao, data))
+
+
 def adicionarEvento(listaEventos):
     print("\n--- Novo Evento ---")
     nome = input("Nome do evento: ")
     data = input("Data (DD/MM/AAAA): ")
+    while (validar_data(data) == False):
+        data = input("Data (DD/MM/AAAA): ")
     hora = input("Hora (HH:MM): ")
     local = input("Local: ")
     cidade = input("Cidade/UF: ")
