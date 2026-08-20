@@ -47,11 +47,37 @@ def filtrar_eventos(listaDeEvento):
     for novoEvento in listaDeEvento:
        
         if nome_busca.lower() in novoEvento[0].lower():
-            print(f"Nome: {novoEvento[0]} | data: R$ {novoEvento[1]} | local: {novoEvento[3]} | categoria: {novoEvento[4]} | cidade: {novoEvento[5]}")
+            print(f"Nome: {novoEvento[0]} | data: R$ {novoEvento[1]} | local: {novoEvento[2]} | categoria: {novoEvento[3]} | cidade: {novoEvento[4]}")
             encontrou = True
             
     if not encontrou:
-        print("Nenhum produto encontrado com esse termo.")    
+        print("Nenhum produto encontrado com esse termo.")   
+
+def marcar_participado(listaDeEventos):
+    """Marca um evento da lista como participado."""
+    listar_eventos(listaDeEventos)
+    if not listaDeEventos:
+        return
+
+    try:
+        num = int(input("Digite o número do evento que você participou: ")) - 1
+        if 0 <= num < len(listaDeEventos):
+            listaDeEventos[num]["participado"] = True
+            print(f"\nEvento '{listaDeEventos[num]['nome']}' marcado como participado!")
+        else:
+            print("Número de evento inválido.")
+    except ValueError:
+        print("Entrada inválida. Digite um número.")
+
+def gerar_relatorio(listaDeEventos):
+    """Gera um resumo estatístico dos eventos."""
+    total = len(listaDeEventos)
+    participados = sum(1 for e in listaDeEventos if e["participado"])
+    
+    print("\n--- RELATÓRIO DE EVENTOS ---")
+    print(f"Total de eventos cadastrados: {total}")
+    print(f"Eventos participados: {participados}")
+    print(f"Eventos pendentes: {total - participados}")        
 
 
 
