@@ -33,9 +33,10 @@ def adicionarEvento(listaEventos):
     novoEvento = {
         "nome": nome, 
         "data" : data,
+        "hora": hora,
         "local" : local,
         "categoria" : categoria,
-        "cidade": cidade
+        "cidade" : cidade
     }
 
     listaEventos.append(novoEvento)
@@ -43,12 +44,12 @@ def adicionarEvento(listaEventos):
 
 
 def listar_eventos(listaDeEvento):
-    """Lista os eventos cadatrados. """
+    """Lista os eventos cadastrados."""
+
     print("\n--- Lista de Eventos ---")
-    for novoEvento in listaDeEvento:
-        if novoEvento[2] > 0:                   
-            print(f"Nome: {novoEvento[0]} | data: R$ {novoEvento[1]} | local: {novoEvento[3]} | categoria: {novoEvento[4]} | cidade: {novoEvento[5]}")
-        
+    for novoEvento in listaDeEvento:                   
+            print(f"Nome: {novoEvento['nome']} | Data: {novoEvento['data']} | Local: {novoEvento['local']} | Categoria: {novoEvento['categoria']} | Cidade: {novoEvento['cidade']}")
+
 def filtrar_eventos(listaDeEvento):
     
     nome_busca = input("Digite o nome (ou parte dele) para buscar: ")
@@ -62,7 +63,7 @@ def filtrar_eventos(listaDeEvento):
             encontrou = True
             
     if not encontrou:
-        print("Nenhum produto encontrado com esse termo.")   
+        print("Nenhum produto encontrado com esse termo.") 
 
 def marcar_participado(listaDeEventos):
     """Marca um evento da lista como participado."""
@@ -80,6 +81,7 @@ def marcar_participado(listaDeEventos):
     except ValueError:
         print("Entrada inválida. Digite um número.")
 
+
 def gerar_relatorio(listaDeEventos):
     """Gera um resumo estatístico dos eventos."""
     total = len(listaDeEventos)
@@ -88,7 +90,7 @@ def gerar_relatorio(listaDeEventos):
     print("\n--- RELATÓRIO DE EVENTOS ---")
     print(f"Total de eventos cadastrados: {total}")
     print(f"Eventos participados: {participados}")
-    print(f"Eventos pendentes: {total - participados}")        
+    print(f"Eventos pendentes: {total - participados}")           
 
 
 
@@ -99,9 +101,8 @@ def displayMenu():
     print("3. Filtrar por Categoria")
     print("4. Marcar Evento como Participado")
     print("5. Gerar Relatório")
-
     print("6. Sair")
-
+    
 def main():
     while True:
         displayMenu()
@@ -124,5 +125,5 @@ def main():
             print("Opção inválida. Tente novamente.")
 
 
-if __name__ == "__main__": 
+if __name__ == "__main__":
     main()
