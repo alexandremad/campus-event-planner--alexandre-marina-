@@ -51,7 +51,23 @@ def filtrar_eventos(listaDeEvento):
             encontrou = True
             
     if not encontrou:
-        print("Nenhum produto encontrado com esse termo.")     
+        print("Nenhum produto encontrado com esse termo.")   
+
+def marcar_participado(listaDeEventos):
+    """Marca um evento da lista como participado."""
+    listar_eventos(listaDeEventos)
+    if not listaDeEventos:
+        return
+
+    try:
+        num = int(input("Digite o número do evento que você participou: ")) - 1
+        if 0 <= num < len(listaDeEventos):
+            listaDeEventos[num]["participado"] = True
+            print(f"\nEvento '{listaDeEventos[num]['nome']}' marcado como participado!")
+        else:
+            print("Número de evento inválido.")
+    except ValueError:
+        print("Entrada inválida. Digite um número.")
 
 
 
