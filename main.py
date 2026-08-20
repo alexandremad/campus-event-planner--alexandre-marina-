@@ -69,6 +69,16 @@ def marcar_participado(listaDeEventos):
     except ValueError:
         print("Entrada inválida. Digite um número.")
 
+def gerar_relatorio(listaDeEventos):
+    """Gera um resumo estatístico dos eventos."""
+    total = len(listaDeEventos)
+    participados = sum(1 for e in listaDeEventos if e["participado"])
+    
+    print("\n--- RELATÓRIO DE EVENTOS ---")
+    print(f"Total de eventos cadastrados: {total}")
+    print(f"Eventos participados: {participados}")
+    print(f"Eventos pendentes: {total - participados}")        
+
 
 
 def displayMenu():
