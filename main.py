@@ -88,7 +88,8 @@ def displayMenu():
     print("3. Filtrar por Categoria")
     print("4. Marcar Evento como Participado")
     print("5. Gerar Relatório")
-    print("6. Sair") 
+
+    print("6. Sair")
 
 def main():
     while True:
@@ -96,21 +97,21 @@ def main():
         opcao = input("Escolha uma opção: ")
 
         if opcao == "1":
-            AdicionarEvento()
+            adicionarEvento(listaDeEventos)
         elif opcao == "2":
-            VerTodosEvento ()
+            listar_eventos(listaDeEventos)
         elif opcao == "3":
-            FiltrarporEventos (listaEventos, categiria)
+            filtrar_eventos (listaDeEventos)
         elif opcao == "4":
-            MarcarEventoAtendido(listaEventos, id)
+            marcar_participado(listaDeEventos)
         elif opcao == "5":
-            GerarRelatorio(listaEventos)
+            gerar_relatorio(listaDeEventos)
         elif opcao == "6":
-            print("Até logo!")
+            print("Até o proxímo evento!")
             break
         else:
             print("Opção inválida. Tente novamente.")
 
 
-if __name__ == "__main__":
+if __name__ == "__main__": 
     main()
