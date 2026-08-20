@@ -10,6 +10,11 @@ eventoBase = {
 
 listaDeEventos = []
 
+<<<<<<< HEAD
+=======
+listaDeEventos = []
+
+>>>>>>> 27e6ba0f16aba28126a33c0d6c8df32411fa5c2d
 def adicionarEvento(listaEventos):
     print("\n--- Novo Evento ---")
     nome = input("Nome do evento: ")
@@ -62,8 +67,8 @@ def displayMenu():
     print("3. Filtrar por Categoria")
     print("4. Marcar Evento como Participado")
     print("5. Gerar Relatório")
-    print("6. Sair")
-    
+    print("6. Sair") 
+
 def main():
     while True:
         displayMenu()
