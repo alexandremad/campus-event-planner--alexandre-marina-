@@ -39,7 +39,6 @@ def displayMenu():
     print("5. Gerar Relatório")
     print("6. Sair")
 
-
 def main():
     while True:
         displayMenu()
@@ -64,3 +63,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    opiçao 1
