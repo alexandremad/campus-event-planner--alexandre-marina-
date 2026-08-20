@@ -10,7 +10,17 @@ eventoBase = {
 
 listaDeEventos = []
 
-def adicionarEvento(listaEventos, nome, data, local, categoria, cidade):
+listaDeEventos = []
+
+def adicionarEvento(listaEventos):
+    print("\n--- Novo Evento ---")
+    nome = input("Nome do evento: ")
+    data = input("Data (DD/MM/AAAA): ")
+    hora = input("Hora (HH:MM): ")
+    local = input("Local: ")
+    cidade = input("Cidade/UF: ")
+    categoria = input("Categoria: ")
+
     novoEvento = {
         "nome": nome, 
         "data" : data,
@@ -20,6 +30,7 @@ def adicionarEvento(listaEventos, nome, data, local, categoria, cidade):
     }
 
     listaEventos.append(novoEvento)
+    print("\nEvento adicionado com sucesso!")
 
 
 def listar_eventos(listaDeEvento):
