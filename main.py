@@ -36,7 +36,8 @@ def adicionarEvento(listaEventos):
         "hora": hora,
         "local" : local,
         "categoria" : categoria,
-        "cidade" : cidade
+        "cidade" : cidade,
+        "participado": False
     }
 
     listaEventos.append(novoEvento)
@@ -51,19 +52,22 @@ def listar_eventos(listaDeEvento):
             print(f"Nome: {novoEvento['nome']} | Data: {novoEvento['data']} | Local: {novoEvento['local']} | Categoria: {novoEvento['categoria']} | Cidade: {novoEvento['cidade']}")
 
 def filtrar_eventos(listaDeEvento):
-    
+    resultado = []
+
     nome_busca = input("Digite o nome (ou parte dele) para buscar: ")
     encontrou = False
     
     print("\n--- RESULTADO DA BUSCA ---")
     for novoEvento in listaDeEvento:
        
-        if nome_busca.lower() in novoEvento[0].lower():
-            print(f"Nome: {novoEvento[0]} | data: R$ {novoEvento[1]} | local: {novoEvento[2]} | categoria: {novoEvento[3]} | cidade: {novoEvento[4]}")
+        if nome_busca.lower() in novoEvento["nome"].lower():
+            print(f"Nome: {novoEvento["nome"]} | data: {novoEvento["data"]} | local: {novoEvento["local"]} | categoria: {novoEvento["categoria"]} | cidade: {novoEvento["cidade"]}")
             encontrou = True
+            resultado.append(novoEvento)
             
     if not encontrou:
         print("Nenhum produto encontrado com esse termo.") 
+    return resultado
 
 def marcar_participado(listaDeEventos):
     """Marca um evento da lista como participado."""
@@ -113,7 +117,8 @@ def main():
         elif opcao == "2":
             listar_eventos(listaDeEventos)
         elif opcao == "3":
-            filtrar_eventos (listaDeEventos)
+           listaFiltrada = filtrar_eventos (listaDeEventos)
+           listar_eventos(listaFiltrada)
         elif opcao == "4":
             marcar_participado(listaDeEventos)
         elif opcao == "5":
