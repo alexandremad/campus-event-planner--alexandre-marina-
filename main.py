@@ -107,6 +107,7 @@ def displayMenu():
     print("5. Gerar Relatório")
     print("6. Sair")
     
+
 def main():
     while True:
         displayMenu()
@@ -130,5 +131,5 @@ def main():
             print("Opção inválida. Tente novamente.")
 
 
-if __name__ == "__main__":
+if __name__ == "__main__": 
     main()
