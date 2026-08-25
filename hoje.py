@@ -1,1 +1,0 @@
-Por que gatos miam para você abrir a porta, mas não entram quando você abre?
